@@ -2,6 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import './App.css'
 
+import ListGroup from "./components/ListGroup";
 import Message from "./Message";
 
 // function App() {
@@ -36,7 +37,11 @@ import Message from "./Message";
 // export default App
 
 function App() {
-  return <div><Message/></div>
+  return (
+    <div>
+      <ListGroup />
+    </div>
+  );
 }
 
 export default App;
