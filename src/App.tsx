@@ -2,6 +2,9 @@
 // import reactLogo from './assets/react.svg'
 // import './App.css'
 
+import { useState } from "react";
+import Alert from "./components/Alert";
+import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
 import Message from "./Message";
 
@@ -37,9 +40,16 @@ import Message from "./Message";
 // export default App
 
 function App() {
+  let items = ["Harare", "Bulawayo", "Mutare", "Gweru", "Victoria Falls"];
+  const [alertVisible, setAlertVisible] = useState(false);
+
   return (
     <div>
-      <ListGroup />
+      {alertVisible && (
+        <Alert text="Welcome back!" onClose={() => setAlertVisible(false)} />
+      )}
+      <ListGroup items={items} heading="Cities" />
+      <Button onClick={() => setAlertVisible(true)}>My Button</Button>
     </div>
   );
 }
